@@ -1,12 +1,12 @@
 # Port Scanning Techniques
 
 ## Ping Scan
-### nmap -sP
+    nmap -sP
 - no packets sent
 - reverse-DNS resolution
 
 ## TCP SYN scan
-### nmap -sS
+    nmap -sS
 - does not complete connections with network
   - helps avoid detection
 - send SYN packet, awaits response
@@ -15,14 +15,14 @@
   - *RST/reset* => non-listening port
 
 ## TCP connect scan
-### nmap -sT
+    nmap -sT
 - alternative when SYN scan is not an option
 - sends connect system call to connect with the network
 - uses a call to push information for every connection attempt
 - slower scan, takes longer than SYN scan
 
 ## TCP NULL
-### nmap -sN
+    nmap -sN
 - takes advantage of TCP RFC loophole
   - scan without SYN, RST, or ACK bits triggers a response:
     - no response => *open port*
@@ -31,7 +31,7 @@
 - somewhat good for stealth, but still identified by IDS
 
 ## SCTP INIT scan
-### nmap -sY
+    nmap -sY
 - covers SIGTRAN and SS7 services
 - provides combination of UDP and TCP protocols
 - like SYN scan - very fast
@@ -42,7 +42,7 @@
   - multiple transmissions sent with **no response** => *filtered*
 
 ## UDP scan
-### nmap -sU
+    nmap -sU
 - used for scanning UDP devices
   - DNS, DHCP, SNMP - highly targeted by attackers - important to scan
 - can run concurrently with SYN scan
@@ -53,22 +53,22 @@
 # Host Scanning
 
 ## Identify Hostnames
-### nmap -sL
+    nmap -sL
 - executes DNS query
 - returns hostnames wihtout sending packet to host
 
 ## OS Scanning
-### nmap -O
+    nmap -O
 - sends UDP and TCP packets to analyze response
   - checks against internal database of operating systems
     - if match is found, nmap gives OS, version, provider's name
 
 ## Version Detection
-### nmap -sV
+    nmap -sV
 - uses information from open port to tell the version of the software on the computer
 
 ## Verbosity
-### nmap -v \[range from -4 to 4\]
+    nmap -v [range from -4 to 4]
 - **Level -4** - no output - will not see response packets
 - **Level -3** - above + provides error messages showing failures
 - **Level -2** - above + warnings and any other error messages
