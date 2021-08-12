@@ -68,10 +68,16 @@
 - uses information from open port to tell the version of the software on the computer
 
 ## Verbosity
-###
-  
-
-
+### nmap -v \[range from -4 to 4\]
+- **Level -4** - no output - will not see response packets
+- **Level -3** - above + provides error messages showing failures
+- **Level -2** - above + warnings and any other error messages
+- **Level -1** - above + run-time information such as start time, version, and statistics
+- **Level 0** - default - displays sent and received packets and other information
+- **Level 1** - above + protocol, flags, and timing
+- **Level 2** - more detailed information about sent and received packets
+- **Level 3** - complete raw transfer of both sent and received packets
+- **Level 4** - above + more information
 
 
 
