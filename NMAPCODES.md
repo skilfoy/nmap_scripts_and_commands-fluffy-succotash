@@ -1,6 +1,17 @@
 # Table of Contents
 - [Port Scanning Techniques](#port-scanning-techniques)
-
+  - [Ping Scan](#ping-scan)
+  - [TCP SYN scan](#tcp-syn-scan)
+  - [TCP connect scan](#tcp-connect-scan)
+  - [TCP NULL](#tcp-null)
+  - [SCTP INIT scan](#sctp-init-scan)
+  - [UDP scan](#udp-scan)
+- [Host Scanning](#host-scanning)
+  - [Identify Hostnames](#identify-hostnames)
+  - [OS Scanning](#os-scanning)
+  - [Version Detection](#version-detection)
+  - [Verbosity](#verbosity)
+- [Brute Forcing Passwords](#brute-forcing-passwords)
 
 # Port Scanning Techniques
 
@@ -83,5 +94,18 @@
 - **Level 3** - complete raw transfer of both sent and received packets
 - **Level 4** - above + more information
 
+# Brute Forcing Passwords
+    nmap --script brute -Pn <target>
+- Brute authentication credentials of a server
+- Other scripts include:
+  - http-brute, snmp-brute, oracle-brute, etc.
 
+# DoS Attacks
+#### Flood host with several requests to test if it crashes or fails to service other genuine requests:
+
+    nmap --script dos -Pn <target>
+
+#### Launch active DoS attack on target host for indefinite period of time:
+   
+    nmap --max-parallelism 750 -Pn --script http_slowloris script-args http-slowloris.runforever=true
 
