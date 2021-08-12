@@ -1,4 +1,8 @@
-# Port Scanning Techniques
+# Table of Contents
+- [Port-Scanning-Techniques](#Port-Scanning-Techniques)
+
+
+# Port-Scanning-Techniques
 
 ## Ping Scan
     nmap -sP
