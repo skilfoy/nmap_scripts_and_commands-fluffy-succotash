@@ -1,7 +1,7 @@
 # Port Scanning Techniques
 
 ## Ping Scan
-### nmap -sP <ip>
+### nmap -sP
 - no packets sent
 - reverse-DNS resolution
 
@@ -53,18 +53,23 @@
 # Host Scanning
 
 ## Identify Hostnames
-### nmap -sL <ip>
+### nmap -sL
 - executes DNS query
 - returns hostnames wihtout sending packet to host
 
 ## OS Scanning
-### nmap -O <ip>
+### nmap -O
 - sends UDP and TCP packets to analyze response
   - checks against internal database of operating systems
     - if match is found, nmap gives OS, version, provider's name
 
 ## Version Detection
-### nmap -sV <ip>
+### nmap -sV
+- uses information from open port to tell the version of the software on the computer
+
+## Verbosity
+###
+  
 
 
 
