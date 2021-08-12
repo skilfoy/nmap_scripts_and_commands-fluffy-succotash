@@ -12,6 +12,7 @@
   - [Version Detection](#version-detection)
   - [Verbosity](#verbosity)
 - [Brute Forcing Passwords](#brute-forcing-passwords)
+- [DoS Attacks](#dos-attacks)
 
 # Port Scanning Techniques
 
