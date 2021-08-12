@@ -1,12 +1,12 @@
 # Port Scanning Techniques
 
-## nmap -sP <ip>
-### Ping Scan
+## Ping Scan
+### nmap -sP <ip>
 - no packets sent
 - reverse-DNS resolution
 
-##nmap -sS
-###TCP SYN scan
+## TCP SYN scan
+### nmap -sS
 - does not complete connections with network
   - helps avoid detection
 - send SYN packet, awaits response
@@ -14,15 +14,15 @@
   - *no response* => filtered port
   - *RST/reset* => non-listening port
 
-## nmap -sT
-### TCP connect scan
+## TCP connect scan
+### nmap -sT
 - alternative when SYN scan is not an option
 - sends connect system call to connect with the network
 - uses a call to push information for every connection attempt
 - slower scan, takes longer than SYN scan
 
-## nmap -sN
-### TCP NULL
+## TCP NULL
+### nmap -sN
 - takes advantage of TCP RFC loophole
   - scan without SYN, RST, or ACK bits triggers a response:
     - no response => *open port*
@@ -30,8 +30,8 @@
 - navigate through firewalls and network/router filters
 - somewhat good for stealth, but still identified by IDS
 
-## nmap -sY
-### SCTP INIT scan
+## SCTP INIT scan
+### nmap -sY
 - covers SIGTRAN and SS7 services
 - provides combination of UDP and TCP protocols
 - like SYN scan - very fast
@@ -41,8 +41,8 @@
   - ABORT chunk => *non-listening port*
   - multiple transmissions sent with **no response** => *filtered*
 
-## nmap -sU
-### UDP scan
+## UDP scan
+### nmap -sU
 - used for scanning UDP devices
   - DNS, DHCP, SNMP - highly targeted by attackers - important to scan
 - can run concurrently with SYN scan
@@ -50,21 +50,21 @@
   - except for ports 53 and 161, empty packet is sent
   - *no response* => port open
 
-#Host Scanning
+# Host Scanning
 
-## nmap -sL <ip>
-### Identify Hostnames
+## Identify Hostnames
+### nmap -sL <ip>
 - executes DNS query
 - returns hostnames wihtout sending packet to host
 
-## nmap -O <ip>
-### OS Scanning
+## OS Scanning
+### nmap -O <ip>
 - sends UDP and TCP packets to analyze response
   - checks against internal database of operating systems
     - if match is found, nmap gives OS, version, provider's name
 
-## nmap -sV <ip>
-### Version Detection
+## Version Detection
+### nmap -sV <ip>
 
 
 
