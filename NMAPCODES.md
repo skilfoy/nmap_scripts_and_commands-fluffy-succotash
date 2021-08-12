@@ -95,8 +95,8 @@
 - **Level 4** - above + more information
 
 # Brute Forcing Passwords
+#### Brute authentication credentials of a server
     nmap --script brute -Pn <target>
-- Brute authentication credentials of a server
 - Other scripts include:
   - http-brute, snmp-brute, oracle-brute, etc.
 
